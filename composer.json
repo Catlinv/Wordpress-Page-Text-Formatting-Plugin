@@ -1,0 +1,17 @@
+{
+    "name": "csbera/page-text-formatting-plugin-plugin",
+    "description": "Starter plugi",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Csbera",
+            "email": "csbera42@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
