@@ -16,6 +16,8 @@ class Enqueue extends BaseController
 	function enqueue() {
 		// enqueue all our scripts
 		wp_enqueue_style( 'mypluginstyle', $this->plugin_url . 'assets/mystyle.css' );
+        wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'mypluginscript', $this->plugin_url . 'assets/myscript.js' );
+        wp_enqueue_script( 'my-script-handle', $this->plugin_url . 'assets/myscript.js' , array( 'jquery','wp-color-picker' ), false, true );
 	}
 }
