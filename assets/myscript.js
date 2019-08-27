@@ -41,3 +41,7 @@ function submitForm() {
         alert('Got this from the server: ' + response);
     });
 }
+
+function updateFormData() {
+    //TODO Update the form with the data from the database
+}
