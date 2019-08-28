@@ -28,7 +28,7 @@ class Admin extends BaseController
 				'menu_title' => 'Text Formatting',
 				'capability' => 'manage_options', 
 				'menu_slug' => 'page_text_formatting_plugin',
-				'callback' => function(){ echo(require_once $this->plugin_path . 'templates/admin.php');},
+				'callback' => function(){ (require_once $this->plugin_path . 'templates/admin.php');},
 				'icon_url' => '',
 				'position' => 110
 			)

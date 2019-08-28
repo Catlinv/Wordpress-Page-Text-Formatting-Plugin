@@ -27,7 +27,6 @@ class FormatData
 
     private function __construct()
     {
-        //TODO Connect to database and fetch data from wp_options
         $formatData = json_decode(get_option('textFormat'),true);
         if (isset($formatData)) {
             $this->p = $formatData['p'];
