@@ -40,8 +40,8 @@ function submitForm() {
         'formData': formData
     };
     jQuery.post(ajaxurl, data, function(response) {
-        alert('Text format added successfully: ' + response);
-        getFormData();
+        alert('Text format added successfully');
+        g_formData = JSON.parse(response);
     });
 }
 
@@ -58,19 +58,19 @@ function getFormData(){
 function updateFormData(text) {
     //TODO Update the form with the data from the database
     const data = g_formData[text];
-    const form = jQuery('form');
+    const form = jQuery('#customSettingsForm');
     if(data !== null){
-        jQuery('input[name="fontColor"]').wpColorPicker('color',data['fontColor']);
-        jQuery('input[name="transformGroup"]').filter('[value="' + data['transformGroup'] + '"]').prop('checked', true);
-        jQuery('input[name="alignmentGroup"]').filter('[value="' + data['alignmentGroup'] + '"]').prop('checked', true);
-        jQuery('input[name="fontSize"]').val(data['fontSize']);
-        jQuery('input[name="lineHeight"]').val(data['lineHeight']);
-        jQuery('input[name="letterSpacing"]').val(data['letterSpacing']);
-        jQuery('input[name="backgroundColor"]').wpColorPicker('color',data['backgroundColor']);
-        jQuery('input[name="borderColor"]').wpColorPicker('color',data['borderColor']);
-        jQuery('input[name="borderWidth"]').val(data['borderWidth']);
-        jQuery('input[name="borderGroup"]').filter('[value="' + data['borderGroup'] + '"]').prop('checked', true);
-        jQuery('input[name="cornerNumber"]').val(data['cornerNumber']);
+        jQuery('input[name="color"]').wpColorPicker('color',data['color']);
+        jQuery('input[name="text-transform"]').filter('[value="' + data['text-transform'] + '"]').prop('checked', true);
+        jQuery('input[name="text-align"]').filter('[value="' + data['text-align'] + '"]').prop('checked', true);
+        jQuery('input[name="font-size"]').val(data['font-size']);
+        jQuery('input[name="line-height"]').val(data['line-height']);
+        jQuery('input[name="letter-spacing"]').val(data['letter-spacing']);
+        jQuery('input[name="background-color"]').wpColorPicker('color',data['background-color']);
+        jQuery('input[name="border-color"]').wpColorPicker('color',data['border-color']);
+        jQuery('input[name="border-width"]').val(data['border-width']);
+        jQuery('input[name="border-style"]').filter('[value="' + data['border-style'] + '"]').prop('checked', true);
+        jQuery('input[name="border-radius"]').val(data['border-radius']);
     }
 
     const sliders = jQuery('.slider');

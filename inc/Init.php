@@ -33,7 +33,7 @@ final class Init
 				$service->register();
 			}
         }
-		FormatData::getInstance();
+        FormatData::getInstance();
 	}
 
 	/**
