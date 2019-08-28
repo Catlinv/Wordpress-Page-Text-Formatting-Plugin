@@ -54,7 +54,7 @@
         <p>Corner Number</p>
         <input type="number" min="1" max="10" name="cornerNumber"/>
         <br>
-        <input type="hidden" id="hiddenTitle" name="hiddentTitle">
+        <input type="hidden" id="hiddenTitle" name="hiddenTitle">
         <input type="button" value="Submit" onclick="submitForm()">
     </form>
 </div>

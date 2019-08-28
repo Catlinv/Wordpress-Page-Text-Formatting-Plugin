@@ -4,6 +4,7 @@
     <include_path>
       <path value="$PROJECT_DIR$/../../../wp-includes" />
       <path value="$PROJECT_DIR$/../../../wp-admin" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
 </project>

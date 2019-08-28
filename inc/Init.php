@@ -2,6 +2,8 @@
 
 namespace Inc;
 
+use Inc\Api\FormatData;
+
 final class Init
 {
 	/**
@@ -30,7 +32,8 @@ final class Init
 			if ( method_exists( $service, 'register' ) ) {
 				$service->register();
 			}
-		}
+        }
+		FormatData::getInstance();
 	}
 
 	/**
