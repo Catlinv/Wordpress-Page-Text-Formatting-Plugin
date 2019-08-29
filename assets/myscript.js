@@ -54,6 +54,18 @@ function getFormData() {
     });
 }
 
+function resetFormData() {
+    jQuery('#customSettingsForm').hide();
+    jQuery('.dropbtn').text('Applying setting');
+    const data = {
+        'action': 'reset_format',
+    };
+    jQuery.post(ajaxurl, data).done(function (response) {
+        g_formData = JSON.parse(response);
+        jQuery('.dropbtn').text('Chose what to edit');
+    });
+}
+
 function updateFormData(text) {
 
     const data = g_formData[text];

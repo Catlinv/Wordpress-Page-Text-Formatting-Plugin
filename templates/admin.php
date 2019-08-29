@@ -56,5 +56,6 @@
         <br>
         <input type="hidden" id="hiddenTitle" name="hiddenTitle">
         <input type="button" value="Submit" onclick="submitForm()">
+        <input type="button" value="Reset All Settings" onclick="resetFormData()">
     </form>
 </div>

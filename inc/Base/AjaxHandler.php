@@ -11,6 +11,7 @@ class AjaxHandler extends BaseController
     public function register() {
         add_action( 'wp_ajax_submit_format', array( $this, 'update_format') );
         add_action( 'wp_ajax_get_format', array( $this, 'get_format') );
+        add_action( 'wp_ajax_reset_format', array( $this, 'reset_format') );
     }
 
     function update_format() {
@@ -33,5 +34,10 @@ class AjaxHandler extends BaseController
     function get_format() {
         echo json_encode(FormatData::getInstance()->toArray());
         die();
+    }
+
+    function reset_format() {
+        FormatData::resetToDefault();
+        $this->get_format();
     }
 }

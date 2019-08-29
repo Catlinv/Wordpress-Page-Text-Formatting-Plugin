@@ -31,15 +31,16 @@ class Enqueue extends BaseController
     function hook_css(){
 	    if(is_page()) {
 	        $data = FormatData::getInstance()->toArray();
+	        ?> <style> <?php
 	        foreach ($data as $title=>$values){
 	            $this->addStyleForTitle($title,$values);
 	        }
+	        ?> </style> <?php
         }
     }
 
     private function addStyleForTitle($title,$data){
 	    ?>
-        <style>
             <?php echo $title?> {
                 background-color: <?php echo $data['background-color'];?> ;
                 border-color: <?php echo $data['border-color'];?> ;
@@ -53,7 +54,6 @@ class Enqueue extends BaseController
                 text-align: <?php echo $data['text-align'];?> ;
                 text-transform: <?php echo $data['text-transform'];?>
             }
-        </style>
         <?php
     }
 }
