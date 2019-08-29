@@ -64,7 +64,6 @@ class FormatData
     {
         if (isset(self::$instance)) {
             $arr = self::$instance->toArray();
-            //print_r($arr);
             update_option('textFormat', wp_json_encode($arr));
         }
     }

@@ -8,6 +8,13 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die;
 }
 
+$users = get_users();
+foreach ($users as $user){
+    if(user_can($user,'format-text-capability')){
+        $user->remove_cap('format-text-capability');
+    }
+}
+
 // Clear Database stored data
 //$books = get_posts( array( 'post_type' => 'book', 'numberposts' => -1 ) );
 //
